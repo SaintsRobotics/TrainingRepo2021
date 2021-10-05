@@ -26,9 +26,9 @@ public class RobotContainer {
   public final SingleMotorSubsystem m_singleMotorSubsystem = new SingleMotorSubsystem();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
-  private final SingleMotorCommandCounterclockwise m_unoMotor = new SingleMotorCommandCounterclockwise(
+  private final SingleMotorCommandCounterclockwise m_commandCounterClockwise = new SingleMotorCommandCounterclockwise(
       m_singleMotorSubsystem);
-  private final SingleMotorCommandClockwise m_dosMotor = new SingleMotorCommandClockwise(m_singleMotorSubsystem)
+  private final SingleMotorCommandClockwise m_commandClockwise = new SingleMotorCommandClockwise(m_singleMotorSubsystem);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -46,8 +46,8 @@ public class RobotContainer {
     XboxController controller = new XboxController(2); //Create the map of the controller
     JoystickButton buttonForTurningClockWise = new JoystickButton(controller, 1);
     JoystickButton buttonForTurningCounterClockWise = new JoystickButton(controller, 1);
-    buttonForTurningClockWise.whenPressed(m_dosMotor);
-    buttonForTurningCounterClockWise.whenPressed(m_unoMotor);
+    buttonForTurningClockWise.whileHeld(m_commandClockwise);
+    buttonForTurningCounterClockWise.whileHeld(m_commandCounterClockwise);
 
   }
 
