@@ -21,6 +21,11 @@ public class MotorSubsystem extends SubsystemBase {
     m_motor = new CANSparkMax(Constants.MotorConstants.portNumber, MotorType.kBrushless);
   }
 
+  /**
+   * Sets the speed of the motor to given speed.
+   * Also updates the m_isRunning variable
+   * @param speed
+   */
   public void setMotorSpeed(double speed) {
     m_velocity = speed;  
     m_isRunning = speed != 0;

@@ -42,6 +42,8 @@ public class RobotContainer {
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
+   * 
+   * <p>Configure buttons such that button A moves motor clockwise and button B moves motor counterclockwise</p>
    */
   private void configureButtonBindings() {
     new JoystickButton(m_driveController, Button.kA.value)
