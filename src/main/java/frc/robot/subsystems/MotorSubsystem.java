@@ -13,8 +13,8 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class MotorSubsystem extends SubsystemBase {
   private CANSparkMax m_motor;
-  public boolean isRunning = false;
-  public double velocity = 0; // positive speed is moving forward and negative speed is moving backwards
+  public boolean m_isRunning = false;
+  public double m_velocity = 0; // positive speed is moving forward and negative speed is moving backwards (not tested)
 
   /** Creates a new MotorSubsystem. */
   public MotorSubsystem() {
@@ -22,13 +22,13 @@ public class MotorSubsystem extends SubsystemBase {
   }
 
   public void setMotorSpeed(double speed) {
-    velocity = speed;  
-    isRunning = speed != 0;
+    m_velocity = speed;  
+    m_isRunning = speed != 0;
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    m_motor.set(velocity);
+    m_motor.set(m_velocity);
   }
 }

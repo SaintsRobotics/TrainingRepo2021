@@ -17,4 +17,8 @@ public final class Constants {
     public static final class MotorConstants {
         public static final int portNumber = 0;
     }
+
+    public static final class XboxControllerConstants {
+        public static final int idNumber = 1;
+    }
 }
