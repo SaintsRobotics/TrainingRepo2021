@@ -1,0 +1,30 @@
+Requirements:
+1. list of commands
+2. list of hardware and types
+3. list of buttons
+4. list of methods in the subsystem
+
+List of Hardware and Types:
+2 CanSparkMax motors (used for flywheel)
+2 WPI_VictorSPX motors (used for the feeder)
+
+List of Commands (in order of expected execution):
+Command to control the flywheel (both motors)
+Command to control the feeder (both motors)
+
+List of Methods in the Flywheel subsystem:
+Method to start both flywheel motors
+Method to stop both flywheel motors
+Periodic method to set the speed to either 0 or 1 each tick
+
+List of Methods in the Feeder subsystem:
+Method to start both feeder motors
+Method to stop both feeder motors
+Periodic method to set the speed to either 0 or 0.5 each tick
+
+List of Buttons:
+1 button to turn on the flywheel (toggle)
+1 button to turn on the feeder (toggle)
+
+
+
