@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
@@ -35,5 +36,6 @@ public class MotorSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     m_motor.set(m_velocity);
+    SmartDashboard.putNumber("motor velocity", m_velocity);
   }
 }
