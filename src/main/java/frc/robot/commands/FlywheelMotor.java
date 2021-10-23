@@ -7,10 +7,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.MotorSubsystem;
 
-public class CounterclockwiseMotor extends CommandBase {
+public class FlywheelMotor extends CommandBase {
   private final MotorSubsystem m_motorsubsystem;
   /** Creates a new CounterclockwiseMotor. */
-  public CounterclockwiseMotor(MotorSubsystem subsystem) {
+  public FlywheelMotor(MotorSubsystem subsystem) {
     m_motorsubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);

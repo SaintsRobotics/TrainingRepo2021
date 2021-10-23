@@ -18,7 +18,7 @@ public class FlywheelSubsystem extends SubsystemBase {
   public FlywheelSubsystem() {
     m_motor = new CANSparkMax(Constants.MotorConstants.portNumber, MotorType.kBrushless);
   }
-  public void SetMotorSpeed(double speed) {
+  public void SetFlywheelSpeed(double speed) {
     m_velocity= speed;
     m_IsRunning = speed != 0;
   }
