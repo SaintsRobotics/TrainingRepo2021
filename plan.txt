@@ -22,4 +22,4 @@ Commands and Methods:
 
 Buttons:
 -	Feeder Command = Y button while held
--	toggle flywheel X button
+-	toggle flywheel = X button while held

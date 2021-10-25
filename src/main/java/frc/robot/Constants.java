@@ -15,10 +15,17 @@ package frc.robot;
 public final class Constants {
 
     public static final class MotorConstants {
-        public static final int portNumber = 6;
+        public static final int portNumber = 4;
     }
 
     public static final class XboxControllerConstants {
         public static final int idNumber = 1;
+    }
+
+    public static final class ShooterConstants {
+        public static final int leftFlywheelPort = 5;
+        public static final int rightFlywheelPort = 6;
+        public static final int wheelsPort = 7;
+        public static final int kickerPort = 8;
     }
 }
