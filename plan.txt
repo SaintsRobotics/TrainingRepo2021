@@ -4,17 +4,16 @@ Shooter stuff
 4.	which buttons
 3.	commands
 
-Hardware:
+Hardware: (done)
 -	2 CANSparkMax flywheel motors (right and left)
 -	2 WPI_VictorSPX feeder motors (kicker and wheels)
 
-Subsystems and Methods:
+Subsystems and Methods: (done)
 -	Feeder Subsystem
-	-	method to set speed of motors (0 for stop, 1 for clockwise)
-	-	method to stop motors (sets speed to 0)
+	-	method to turn on
+	-	method to turn off the motors
 -	Flywheel Subsystem
-	-	method to set speed of motors to 0 or very high number
-	- 	method to stop motors (sets speed to 0)
+	-	method to set speed of motors to a number between -1 and 1
 
 Commands and Methods:
 -	Feeder Command
@@ -23,3 +22,7 @@ Commands and Methods:
 Buttons:
 -	Feeder Command = Y button while held
 -	toggle flywheel = X button while held
+
+',.pyfgcrl
+aoeuidhtns
+;qjkxbmwvz
