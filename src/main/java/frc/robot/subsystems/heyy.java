@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
@@ -11,17 +13,17 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class heyy extends SubsystemBase {
   /** Creates a new heyy. */
   public double motorSpeed;
-  
+  public CANSparkMax firstMotor;
 
-  public heyy(double theoreticalMotorSpeed) {
-      motorSpeed = theoreticalMotorSpeed;
+  public heyy() {
+      
     
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    setSpeed(1.0);
+    firstMotor.set(motorSpeed);
     
   }
   public void setSpeed(double speed){
