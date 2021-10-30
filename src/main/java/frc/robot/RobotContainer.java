@@ -15,6 +15,11 @@ import frc.robot.subsystems.MotorSubsystem;
 import frc.robot.commands.ClockwiseMotor;
 import frc.robot.commands.CounterclockwiseMotor;
 import frc.robot.Constants;
+import frc.robot.HardwareMap.ShooterHardware;
+import frc.robot.commands.FeederCommand;
+import frc.robot.subsystems.FeederSubsystem;
+import frc.robot.commands.FlywheelCommand;
+import frc.robot.subsystems.FlywheelSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -31,6 +36,11 @@ public class RobotContainer {
   private XboxController m_driveController = new XboxController(Constants.XboxControllerConstants.idNumber);
   private MotorSubsystem m_motorsubsystem = new MotorSubsystem();
 
+  private ShooterHardware m_shooterHardware = new HardwareMap().shooterHardware;
+
+  private FeederSubsystem m_feederSubsystem = new FeederSubsystem(m_shooterHardware);
+  private FlywheelSubsystem m_flywheelSubsystem = new FlywheelSubsystem(m_shooterHardware);
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -46,11 +56,18 @@ public class RobotContainer {
    * <p>Configure buttons such that button A moves motor clockwise and button B moves motor counterclockwise</p>
    */
   private void configureButtonBindings() {
+    /*
     new JoystickButton(m_driveController, Button.kA.value)
       .whileHeld(new ClockwiseMotor(m_motorsubsystem));
 
     new JoystickButton(m_driveController, Button.kB.value)
       .whileHeld(new CounterclockwiseMotor(m_motorsubsystem));
+    */
+
+    new JoystickButton(m_driveController, Button.kX.value)
+      .whileHeld(new FeederCommand(m_feederSubsystem));
+    new JoystickButton(m_driveController, Button.kY.value)
+      .toggleWhenPressed(new FlywheelCommand(m_flywheelSubsystem));
 
   }
 

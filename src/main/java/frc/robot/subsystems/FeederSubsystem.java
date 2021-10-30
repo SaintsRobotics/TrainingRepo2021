@@ -6,7 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.HardwareMap.ShooterHardware;
+import frc.robot.HardwareMap.ShooterHardware;
 
 public class FeederSubsystem extends SubsystemBase {
   // fields
@@ -21,8 +21,8 @@ public class FeederSubsystem extends SubsystemBase {
   }
 
   public void turnOn() {
-    m_feederSpeed = 1;
-    m_feeder.set(1);
+    m_feederSpeed = 0.5;
+    m_feeder.set(0.5);
   }
 
   public void turnOff() {

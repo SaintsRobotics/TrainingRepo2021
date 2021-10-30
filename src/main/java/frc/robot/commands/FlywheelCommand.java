@@ -21,12 +21,13 @@ public class FlywheelCommand extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    m_flywheelSubsystem.setPower(0.5);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_flywheelSubsystem.setPower(1);
   }
 
   // Called once the command ends or is interrupted.

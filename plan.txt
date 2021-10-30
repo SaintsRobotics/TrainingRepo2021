@@ -15,11 +15,11 @@ Subsystems and Methods: (done)
 -	Flywheel Subsystem
 	-	method to set speed of motors to a number between -1 and 1
 
-Commands and Methods:
+Commands and Methods (done):
 -	Feeder Command
 -	Flywheel Command
 
-Buttons:
+Buttons (done):
 -	Feeder Command = Y button while held
 -	toggle flywheel = X button while held
 
