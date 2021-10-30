@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.HardwareMap.IntakeHardware;
 
@@ -26,7 +27,6 @@ public class IntakeSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    
   }
 
   public void setSpeedArm(double speed){
@@ -35,5 +35,6 @@ public class IntakeSubsystem extends SubsystemBase {
 
   public void setSpeedMotor(double speed){
     m_intake_motor.set(ControlMode.PercentOutput,speed);
+    SmartDashboard.putNumber("motor_speed", speed);
   }
 }
