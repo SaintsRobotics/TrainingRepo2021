@@ -10,15 +10,18 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class OneMotorSubsystem extends SubsystemBase{
     /** Creates a new ExampleSubsystem. */
 
+
      private CANSparkMax motor = new CANSparkMax(1,MotorType.kBrushless);
-     private double speed;
+     private double speed; 
+     
   public OneMotorSubsystem() {
     
   }
 
   @Override
   public void periodic() {
-    motor.set(speed); 
+    motor.set(speed);  
+    
 
   }
 

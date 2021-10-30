@@ -5,22 +5,20 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.OneMotorSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
 
-public class CommandCounterClockWise extends CommandBase {
-  /** Creates a new CommandCounterClockWise. */
-  private OneMotorSubsystem subsystem;
-
-  public CommandCounterClockWise(OneMotorSubsystem subsystem_x) {
-    subsystem = subsystem_x;
+public class CommandIntakeMotor extends CommandBase {
+  private IntakeSubsystem subsystem;
+  /** Creates a new CommandIntakeMotor. */
+  public CommandIntakeMotor(IntakeSubsystem subsystemIntake) {
+    // Use addRequirements() here to declare subsystem dependencies.
+    subsystem = subsystemIntake;
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    subsystem.setSpeed(-1); 
-
-
+    subsystem.setSpeedMotor(1);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +27,9 @@ public class CommandCounterClockWise extends CommandBase {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) { 
+    subsystem.setSpeedMotor(0);
+  }
 
   // Returns true when the command should end.
   @Override

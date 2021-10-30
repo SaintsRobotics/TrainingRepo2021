@@ -5,22 +5,21 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.OneMotorSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
-public class CommandCounterClockWise extends CommandBase {
-  /** Creates a new CommandCounterClockWise. */
-  private OneMotorSubsystem subsystem;
+public class FeederCommand extends CommandBase {
+  /** Creates a new FeederCommand. */
+  private ShooterSubsystem shooter; 
 
-  public CommandCounterClockWise(OneMotorSubsystem subsystem_x) {
-    subsystem = subsystem_x;
+  public FeederCommand(ShooterSubsystem shooterSubsystem) {
+    // Use addRequirements() here to declare subsystem dependencies. 
+    shooter = shooterSubsystem; 
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    subsystem.setSpeed(-1); 
-
-
+    shooter.setFeederSpeed(1);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -29,7 +28,8 @@ public class CommandCounterClockWise extends CommandBase {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    shooter.setFeederSpeed(0);}
 
   // Returns true when the command should end.
   @Override
