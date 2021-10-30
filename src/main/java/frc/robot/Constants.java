@@ -23,9 +23,9 @@ public final class Constants {
     }
 
     public static final class ShooterConstants {
-        public static final int leftFlywheelPort = 5;
-        public static final int rightFlywheelPort = 6;
-        public static final int wheelsPort = 7;
-        public static final int kickerPort = 8;
+        public static final int leftFlywheelPort = 16;
+        public static final int rightFlywheelPort = 17;
+        public static final int wheelsPort = 26;
+        public static final int kickerPort = 27;
     }
 }
