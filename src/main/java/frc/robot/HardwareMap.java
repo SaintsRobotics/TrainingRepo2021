@@ -25,7 +25,7 @@ public class HardwareMap {
 
             wheels = new WPI_VictorSPX(Constants.ShooterConstants.wheelsPort);
             kicker = new WPI_VictorSPX(Constants.ShooterConstants.kickerPort);
-            wheels.setInverted(true);
+            kicker.setInverted(true);
             feeder = new SpeedControllerGroup(wheels, kicker);
         }
     }
