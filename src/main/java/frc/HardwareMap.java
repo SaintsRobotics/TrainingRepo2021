@@ -19,12 +19,13 @@ public class HardwareMap {
 
         public ShooterHardware() {
             leftFlywheel = new CANSparkMax(Constants.ShooterConstants.leftFlywheelPort, MotorType.kBrushless);
+            leftFlywheel.setInverted(true);
             rightFlywheel = new CANSparkMax(Constants.ShooterConstants.rightFlywheelPort, MotorType.kBrushless);
             flywheel = new SpeedControllerGroup(leftFlywheel, rightFlywheel);
 
             wheels = new WPI_VictorSPX(Constants.ShooterConstants.wheelsPort);
             kicker = new WPI_VictorSPX(Constants.ShooterConstants.kickerPort);
-            wheels.setInverted(true); // we don't know if we need this
+            wheels.setInverted(true);
             feeder = new SpeedControllerGroup(wheels, kicker);
         }
     }
