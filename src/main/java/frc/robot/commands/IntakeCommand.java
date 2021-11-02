@@ -18,7 +18,6 @@ public class IntakeCommand extends CommandBase {
   public IntakeCommand(IntakeSubsystem subsystem, DoubleSupplier intakeSupplier, DoubleSupplier armSupplier) {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
-    m_subsystem = subsystem;
     m_intakeSupplier = intakeSupplier;
     m_armSupplier = armSupplier;
   }
