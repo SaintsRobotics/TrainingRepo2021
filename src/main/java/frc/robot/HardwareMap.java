@@ -41,8 +41,8 @@ public class HardwareMap {
 
 
 
-            wheels = new WPI_VictorSPX(1); 
-            kicker = new WPI_VictorSPX(2);  
+            wheels = new WPI_VictorSPX(27); 
+            kicker = new WPI_VictorSPX(26);  
 
             wheels.setInverted(true);
 

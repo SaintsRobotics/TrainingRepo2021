@@ -18,7 +18,7 @@ public class ShooterCommand extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    shooter.setFlywheelSpeed(1);
+    shooter.setFlywheelSpeed(.3);
   }
 
   // Called every time the scheduler runs while the command is scheduled.

@@ -37,13 +37,14 @@ public class RobotContainer {
    
   
 
+
   
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings(); 
-    m_intakeSubsystem.setDefaultCommand(m_commandIntakeArm);
+    //m_intakeSubsystem.setDefaultCommand(m_commandIntakeArm);
   }
 
   /**
@@ -53,9 +54,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(m_xbox, Button.kBumperLeft.value).whileHeld(new CommandIntakeMotor(m_intakeSubsystem));  
+    //new JoystickButton(m_xbox, Button.kBumperLeft.value).whileHeld(new CommandIntakeMotor(m_intakeSubsystem));  
     new JoystickButton(m_xbox, Button.kBumperRight.value).whileHeld(new FeederCommand(m_shooterSubsystem));  
-    new JoystickButton(m_xbox,Button.kA.value).whenPressed(new ShooterCommand(m_shooterSubsystem));
+    new JoystickButton(m_xbox,Button.kA.value).toggleWhenPressed(new ShooterCommand(m_shooterSubsystem));
 
     
     
