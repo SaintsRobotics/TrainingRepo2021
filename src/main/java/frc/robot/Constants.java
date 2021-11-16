@@ -21,4 +21,12 @@ public final class Constants {
     public static final class XboxControllerConstants {
         public static final int idNumber = 1;
     }
+
+    public static final class SwerveConstants {
+        /** Distance between centers of front and back wheels on robot. */
+        public static final double WHEEL_BASE = 0.67;
+
+        /** Distance between right and left wheels on robot. */
+        public static final double TRACK_WIDTH = 0.5;
+    }
 }
