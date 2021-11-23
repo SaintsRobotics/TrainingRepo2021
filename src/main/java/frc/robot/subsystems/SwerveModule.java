@@ -20,6 +20,6 @@ public class SwerveModule {
     }
 
     public Translation2d getLocation () {
-        
+        return new Translation2d();
     }
 }
