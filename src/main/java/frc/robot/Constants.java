@@ -15,7 +15,7 @@ package frc.robot;
 public final class Constants {
 
     public static final class MotorConstants {
-        public static final int portNumber = 6;
+        public static final int portNumber = 2;
     }
 
     public static final class XboxControllerConstants {

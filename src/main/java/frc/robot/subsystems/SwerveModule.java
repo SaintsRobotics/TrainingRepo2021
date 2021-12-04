@@ -14,6 +14,8 @@ import com.revrobotics.CANSparkMax;
 public class SwerveModule {
     // fields
     private AbsoluteEncoder m_absoluteEncoder;
+    private CANSparkMax m_driveMotor;
+    private CANSparkMax m_turningMotor;
 
     /** Creates a new SwerveDrivetrainSubsystem. */
     public SwerveModule(SwerveModuleHardware hardware) {
