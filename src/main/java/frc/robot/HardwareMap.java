@@ -6,43 +6,47 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.subsystems.SwerveModule;
+import frc.robot.Constants;
 
+/** Add your docs here. */
 public class HardwareMap {
-    public class FeederHardware {
-
-        private WPI_VictorSPX wheel;
-        private WPI_VictorSPX kicker;
-
-        public SpeedControllerGroup feeder;
-
-        public FeederHardware() {
-            wheel = new WPI_VictorSPX(5); // 5 is the port number
-            kicker = new WPI_VictorSPX(6); // 6 is the port number
-
-            feeder = new SpeedControllerGroup(wheel, kicker);
-        }
+    public class SwerveDrivetrainHardware {
+        public SwerveModule frontLeft = new SwerveModule(swerveModuleHardware);
+        public SwerveModule frontRight = new SwerveModule(swerveModuleHardware);
+        public SwerveModule rearLeft = new SwerveModule(swerveModuleHardware);
+        public SwerveModule rearRight = new SwerveModule(swerveModuleHardware);
     }
 
-    public class FlywheelHardware {
+    public class SwerveModuleHardware {
+        public CANSparkMax frontLeftTurningMotor = new CANSparkMax(
+            Constants.SwerveConstants.MotorConstants.frontLeftTurningMotor, MotorType.kBrushless);
+        public CANSparkMax frontLeftDriveMotor = new CANSparkMax(
+            Constants.SwerveConstants.MotorConstants.frontLeftDriveMotor, MotorType.kBrushless);
+        public AbsoluteEncoder frontLeftAbsoluteEncoder = new AbsoluteEncoder(
+            Constants.SwerveConstants.AbsoluteEncoderConstants.frontLeftEncoder);
 
-        private CANSparkMax leftFlywheelMotor;
-        private CANSparkMax rightFlywheelMotor;
-        public SpeedControllerGroup flywheel;
+        public CANSparkMax frontRightTurningMotor = new CANSparkMax(
+            Constants.SwerveConstants.MotorConstants.frontRightTurningMotor, MotorType.kBrushless);
+        public CANSparkMax frontRightDriveMotor = new CANSparkMax(
+                Constants.SwerveConstants.MotorConstants.frontRightDriveMotor, MotorType.kBrushless);
+        public AbsoluteEncoder frontRightAbsoluteEncoder = new AbsoluteEncoder(
+                Constants.SwerveConstants.AbsoluteEncoderConstants.frontRightEncoder);
 
-        public FlywheelHardware() {
-            leftFlywheelMotor = new CANSparkMax(7);
-            rightFlywheelMotor = new CANSparkMax(8);
-            flywheel = new SpeedControllerGroup(leftFlywheelMotor, rightFlywheelMotor);
-        }
+        public CANSparkMax rearLeftTurningMotor = new CANSparkMax(
+                Constants.SwerveConstants.MotorConstants.rearLeftTurningMotor, MotorType.kBrushless);
+        public CANSparkMax rearLeftDriveMotor = new CANSparkMax(
+                Constants.SwerveConstants.MotorConstants.rearLeftDriveMotor, MotorType.kBrushless);
+        public AbsoluteEncoder rearLeftAbsoluteEncoder = new AbsoluteEncoder(
+                Constants.SwerveConstants.AbsoluteEncoderConstants.rearLeftEncoder);
+
+        public CANSparkMax rearRightTurningMotor = new CANSparkMax(
+                Constants.SwerveConstants.MotorConstants.rearRightTurningMotor, MotorType.kBrushless);
+        public CANSparkMax rearRightDriveMotor = new CANSparkMax(
+                Constants.SwerveConstants.MotorConstants.rearRightDriveMotor, MotorType.kBrushless);
+        public AbsoluteEncoder rearRightAbsoluteEncoder = new AbsoluteEncoder(
+                Constants.SwerveConstants.AbsoluteEncoderConstants.rearRightEncoder);
     }
 
-    public FeederHardware feederHardware;
-    public FlywheelHardware flywheelHardware;
-
-    public HardwareMap() {
-        feederHardware = new FeederHardware();
-        flywheelHardware = new FlywheelHardware();
-    }
+    SwerveModuleHardware swerveModuleHardware = new SwerveModuleHardware();
 }

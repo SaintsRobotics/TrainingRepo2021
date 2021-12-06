@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
@@ -21,6 +22,11 @@ public class MotorSubsystem extends SubsystemBase {
     m_motor = new CANSparkMax(Constants.MotorConstants.portNumber, MotorType.kBrushless);
   }
 
+  /**
+   * Sets the speed of the motor to given speed.
+   * Also updates the m_isRunning variable
+   * @param speed
+   */
   public void setMotorSpeed(double speed) {
     m_velocity = speed;  
     m_isRunning = speed != 0;
@@ -30,5 +36,6 @@ public class MotorSubsystem extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
     m_motor.set(m_velocity);
+    SmartDashboard.putNumber("motor velocity", m_velocity);
   }
 }

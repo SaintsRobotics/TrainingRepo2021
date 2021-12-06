@@ -21,6 +21,9 @@ public class ClockwiseMotor extends CommandBase {
   public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
+  /**
+   * Sets motor speed to half speed clockwise (0.5) if speed is not already set (not tested)
+   */
   @Override
   public void execute() {
     if(m_motorsubsystem.m_velocity != 0.5) {
