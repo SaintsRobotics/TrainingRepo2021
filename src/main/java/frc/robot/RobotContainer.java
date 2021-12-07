@@ -11,9 +11,11 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import frc.robot.subsystems.MotorSubsystem;
-import frc.robot.commands.ClockwiseMotor;
-import frc.robot.commands.CounterclockwiseMotor;
+// import frc.robot.subsystems.MotorSubsystem;
+// import frc.robot.commands.ClockwiseMotor;
+// import frc.robot.commands.CounterclockwiseMotor;
+import frc.robot.commands.JoystickControllerCommand;
+import frc.robot.subsystems.SwerveDrivetrainSubsystem;
 import frc.robot.Constants;
 
 /**
@@ -29,12 +31,18 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   private XboxController m_driveController = new XboxController(Constants.XboxControllerConstants.idNumber);
-  private MotorSubsystem m_motorsubsystem = new MotorSubsystem();
+  // private MotorSubsystem m_motorsubsystem = new MotorSubsystem();
+
+  private SwerveDrivetrainSubsystem m_drivetrainSubsystem = new SwerveDrivetrainSubsystem(new HardwareMap().swerveDrivetrainHardware);
+
+  private JoystickControllerCommand m_command = new JoystickControllerCommand(m_drivetrainSubsystem, m_driveController);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+
+    m_drivetrainSubsystem.setDefaultCommand(m_command);
   }
 
   /**
@@ -46,11 +54,13 @@ public class RobotContainer {
    * <p>Configure buttons such that button A moves motor clockwise and button B moves motor counterclockwise</p>
    */
   private void configureButtonBindings() {
-    new JoystickButton(m_driveController, Button.kA.value)
-      .whileHeld(new ClockwiseMotor(m_motorsubsystem));
+    // new JoystickButton(m_driveController, Button.kA.value) // Code for single motor
+    //   .whileHeld(new ClockwiseMotor(m_motorsubsystem));
 
-    new JoystickButton(m_driveController, Button.kB.value)
-      .whileHeld(new CounterclockwiseMotor(m_motorsubsystem));
+    // new JoystickButton(m_driveController, Button.kB.value) // Code for single motor
+    //   .whileHeld(new CounterclockwiseMotor(m_motorsubsystem));
+
+
 
   }
 

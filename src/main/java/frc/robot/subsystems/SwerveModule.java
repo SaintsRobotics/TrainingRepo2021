@@ -18,20 +18,23 @@ public class SwerveModule {
     private CANSparkMax m_driveMotor;
     private CANSparkMax m_turningMotor;
     private PIDController m_pidController;
+    private Translation2d m_location;
 
     /** Creates a new SwerveDrivetrainSubsystem. */
-    public SwerveModule(SwerveModuleHardware hardware, CANSparkMax driveMotor, CANSparkMax turningMotor) {
+    public SwerveModule(SwerveModuleHardware hardware, CANSparkMax driveMotor, CANSparkMax turningMotor, double x, double y) {
         m_absoluteEncoder = new AbsoluteEncoder(0);
         m_pidController = new PIDController(0.3, 0, 0);
         m_driveMotor = driveMotor;
         m_turningMotor = turningMotor;
+        m_location = new Translation2d(x, y);
     }
 
     public void setState (SwerveModuleState desiredState) {
-
+        m_turningMotor.set(m_pidController.calculate(m_absoluteEncoder.getAngleDegrees(), desiredState.angle.getDegrees()));
+        m_driveMotor.set(desiredState.speedMetersPerSecond);
     }
 
     public Translation2d getLocation () {
-        return new Translation2d();
+        return m_location;
     }
 }
