@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
 import frc.robot.AbsoluteEncoder;
 import frc.robot.HardwareMap.SwerveModuleHardware;
 import com.revrobotics.CANSparkMax;
+import edu.wpi.first.wpilibj.controller.PIDController;
 
 /** Add your docs here. */
 public class SwerveModule {
@@ -16,10 +17,14 @@ public class SwerveModule {
     private AbsoluteEncoder m_absoluteEncoder;
     private CANSparkMax m_driveMotor;
     private CANSparkMax m_turningMotor;
+    private PIDController m_pidController;
 
     /** Creates a new SwerveDrivetrainSubsystem. */
-    public SwerveModule(SwerveModuleHardware hardware) {
+    public SwerveModule(SwerveModuleHardware hardware, CANSparkMax driveMotor, CANSparkMax turningMotor) {
         m_absoluteEncoder = new AbsoluteEncoder(0);
+        m_pidController = new PIDController(0.3, 0, 0);
+        m_driveMotor = driveMotor;
+        m_turningMotor = turningMotor;
     }
 
     public void setState (SwerveModuleState desiredState) {
