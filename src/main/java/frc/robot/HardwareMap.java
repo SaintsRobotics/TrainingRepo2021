@@ -12,16 +12,16 @@ public class HardwareMap {
 
                 public SwerveModule frontLeft = new SwerveModule(swerveModuleHardware,
                                 swerveModuleHardware.frontLeftDriveMotor, swerveModuleHardware.frontLeftTurningMotor,
-                                Constants.SwerveConstants.TRACK_WIDTH / 2, Constants.SwerveConstants.WHEEL_BASE / 2);
+                                Constants.SwerveConstants.WHEEL_BASE / 2, Constants.SwerveConstants.TRACK_WIDTH / 2, new AbsoluteEncoder(0));
                 public SwerveModule frontRight = new SwerveModule(swerveModuleHardware,
                                 swerveModuleHardware.frontRightDriveMotor, swerveModuleHardware.frontRightTurningMotor,
-                                Constants.SwerveConstants.TRACK_WIDTH / 2, -Constants.SwerveConstants.WHEEL_BASE / 2);
+                                Constants.SwerveConstants.WHEEL_BASE / 2, -Constants.SwerveConstants.TRACK_WIDTH / 2, new AbsoluteEncoder(1));
                 public SwerveModule rearLeft = new SwerveModule(swerveModuleHardware,
                                 swerveModuleHardware.rearLeftDriveMotor, swerveModuleHardware.rearLeftTurningMotor,
-                                -Constants.SwerveConstants.TRACK_WIDTH / 2, Constants.SwerveConstants.WHEEL_BASE / 2);
+                                -Constants.SwerveConstants.WHEEL_BASE / 2, Constants.SwerveConstants.TRACK_WIDTH / 2, new AbsoluteEncoder(2));
                 public SwerveModule rearRight = new SwerveModule(swerveModuleHardware,
                                 swerveModuleHardware.rearRightDriveMotor, swerveModuleHardware.rearRightTurningMotor,
-                                -Constants.SwerveConstants.TRACK_WIDTH / 2, -Constants.SwerveConstants.WHEEL_BASE / 2);
+                                -Constants.SwerveConstants.WHEEL_BASE / 2, -Constants.SwerveConstants.TRACK_WIDTH / 2, new AbsoluteEncoder(3));
         }
 
         public class SwerveModuleHardware {

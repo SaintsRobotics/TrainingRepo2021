@@ -26,7 +26,7 @@ public class SwerveDrivetrainSubsystem extends SubsystemBase {
     m_rearLeftWheel = hardware.rearLeft;
     m_rearRightWheel = hardware.rearRight;
 
-    m_kinematics = new SwerveDriveKinematics();
+    m_kinematics = new SwerveDriveKinematics(m_frontLeftWheel.getLocation(), m_frontRightWheel.getLocation(), m_rearLeftWheel.getLocation(), m_rearRightWheel.getLocation());
   }
 
   public void drive(double xSpeed, double ySpeed, double rotSpeed) {

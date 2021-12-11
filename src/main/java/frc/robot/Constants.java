@@ -23,6 +23,10 @@ public final class Constants {
     }
 
     public static final class SwerveConstants {
+        // for speed scaling
+        public static final double MAX_DRIVE_SPEED_MPS = 3.0;
+        public static final double MAX_TURNING_SPEED_RADIANS_PER_SECOND = 8.76;
+
         /** Distance between centers of front and back wheels on robot. */
         public static final double WHEEL_BASE = 0.67;
 

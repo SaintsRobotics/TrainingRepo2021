@@ -4,11 +4,10 @@
 
 package frc.robot.commands;
 
-import java.security.spec.DSAGenParameterSpec;
-
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.subsystems.SwerveDrivetrainSubsystem;
 
 /** An example command that uses an example subsystem. */
@@ -31,9 +30,9 @@ public class JoystickControllerCommand extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        double y = -m_xboxController.getX(Hand.kLeft);
-        double x = m_xboxController.getY(Hand.kLeft);
-        double rotation = -m_xboxController.getX(Hand.kRight);
+        double y = -m_xboxController.getX(Hand.kLeft) * Constants.SwerveConstants.MAX_DRIVE_SPEED_MPS;
+        double x = m_xboxController.getY(Hand.kLeft) * Constants.SwerveConstants.MAX_DRIVE_SPEED_MPS;
+        double rotation = -m_xboxController.getX(Hand.kRight) * Constants.SwerveConstants.MAX_TURNING_SPEED_RADIANS_PER_SECOND;
 
         m_subsystem.drive(x, y, rotation);
     }
