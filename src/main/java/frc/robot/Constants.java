@@ -36,8 +36,8 @@ public final class Constants {
         public static final class AbsoluteEncoderConstants {
             public static final int frontLeftEncoder = 0;
             public static final int frontRightEncoder = 1;
-            public static final int rearLeftEncoder = 2;
-            public static final int rearRightEncoder = 3;
+            public static final int rearLeftEncoder = 3;
+            public static final int rearRightEncoder = 2;
 
             // Swerve drive encoder offsets (taken from OffSeasonIR2021)
             public static final double frontLeftOffset = 2.75 - (Math.PI / 5);
@@ -47,17 +47,17 @@ public final class Constants {
         }
 
         public static final class MotorConstants {
-            public static final int frontLeftTurningMotor = 0;
-            public static final int frontLeftDriveMotor = 1;
+            public static final int frontLeftTurningMotor = 1;
+            public static final int frontLeftDriveMotor = 8;
 
-            public static final int frontRightTurningMotor = 2;
-            public static final int frontRightDriveMotor = 3;
+            public static final int frontRightTurningMotor = 5;
+            public static final int frontRightDriveMotor = 4;
 
-            public static final int rearLeftTurningMotor = 4;
-            public static final int rearLeftDriveMotor = 5;
+            public static final int rearLeftTurningMotor = 3;
+            public static final int rearLeftDriveMotor = 2;
 
-            public static final int rearRightTurningMotor = 6;
-            public static final int rearRightDriveMotor = 7;
+            public static final int rearRightTurningMotor = 7;
+            public static final int rearRightDriveMotor = 6;
         }
     }
 }
