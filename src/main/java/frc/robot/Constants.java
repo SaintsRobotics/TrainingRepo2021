@@ -38,6 +38,12 @@ public final class Constants {
             public static final int frontRightEncoder = 1;
             public static final int rearLeftEncoder = 2;
             public static final int rearRightEncoder = 3;
+
+            // Swerve drive encoder offsets (taken from OffSeasonIR2021)
+            public static final double frontLeftOffset = 2.75 - (Math.PI / 5);
+            public static final double frontRightOffset = -6.091199;
+            public static final double rearLeftOffset = 2.573;
+            public static final double rearRightOffset = 3.9;
         }
 
         public static final class MotorConstants {

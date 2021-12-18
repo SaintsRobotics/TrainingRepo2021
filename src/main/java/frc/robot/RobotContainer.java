@@ -6,17 +6,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.XboxController.Button;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-// import frc.robot.subsystems.MotorSubsystem;
-// import frc.robot.commands.ClockwiseMotor;
-// import frc.robot.commands.CounterclockwiseMotor;
 import frc.robot.commands.JoystickControllerCommand;
 import frc.robot.subsystems.SwerveDrivetrainSubsystem;
-import frc.robot.Constants;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -25,13 +17,7 @@ import frc.robot.Constants;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
-
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
-
   private XboxController m_driveController = new XboxController(Constants.XboxControllerConstants.idNumber);
-  // private MotorSubsystem m_motorsubsystem = new MotorSubsystem();
 
   private SwerveDrivetrainSubsystem m_drivetrainSubsystem = new SwerveDrivetrainSubsystem(new HardwareMap().swerveDrivetrainHardware);
 
@@ -54,13 +40,6 @@ public class RobotContainer {
    * <p>Configure buttons such that button A moves motor clockwise and button B moves motor counterclockwise</p>
    */
   private void configureButtonBindings() {
-    // new JoystickButton(m_driveController, Button.kA.value) // Code for single motor
-    //   .whileHeld(new ClockwiseMotor(m_motorsubsystem));
-
-    // new JoystickButton(m_driveController, Button.kB.value) // Code for single motor
-    //   .whileHeld(new CounterclockwiseMotor(m_motorsubsystem));
-
-
 
   }
 
@@ -70,7 +49,6 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    // An ExampleCommand will run in autonomous
-    return m_autoCommand;
-  }
+    return null;
+    }
 }
