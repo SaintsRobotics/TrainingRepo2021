@@ -25,7 +25,7 @@ public class SwerveModule {
     /** Creates a new SwerveDrivetrainSubsystem. */
     public SwerveModule(SwerveModuleHardware hardware, CANSparkMax driveMotor, CANSparkMax turningMotor, double x, double y, AbsoluteEncoder absEncoder) {
         m_absoluteEncoder = absEncoder;
-        m_pidController = new PIDController(0.3, 0, 0);
+        m_pidController = new PIDController(0, 0, 0);
         m_driveMotor = driveMotor;
         m_turningMotor = turningMotor;
         m_location = new Translation2d(x, y);
@@ -40,5 +40,14 @@ public class SwerveModule {
 
     public Translation2d getLocation () {
         return m_location;
+    }
+
+    /**
+     * Returns the current radian value from the encoder.
+     * 
+     * @return the current radian value from the encoder
+     */
+    public double getRadians() {
+        return this.m_absoluteEncoder.getAngleRadians();
     }
 }

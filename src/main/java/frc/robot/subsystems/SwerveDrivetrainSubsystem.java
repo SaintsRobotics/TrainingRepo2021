@@ -7,8 +7,10 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.kinematics.ChassisSpeeds;
 import edu.wpi.first.wpilibj.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.HardwareMap.SwerveDrivetrainHardware;
+import frc.robot.HardwareMap.SwerveModuleHardware;
 
 public class SwerveDrivetrainSubsystem extends SubsystemBase {
   private SwerveModule m_frontLeftWheel;
@@ -41,7 +43,11 @@ public class SwerveDrivetrainSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    SmartDashboard.putNumber("Front Left Wheel", m_frontLeftWheel.getRadians());
+    SmartDashboard.putNumber("Front Right Wheel", m_frontRightWheel.getRadians());
+    SmartDashboard.putNumber("Rear Left Wheel", m_rearLeftWheel.getRadians());
+    SmartDashboard.putNumber("Rear Right Wheel", m_rearRightWheel.getRadians());
+    
   }
-
 
 }

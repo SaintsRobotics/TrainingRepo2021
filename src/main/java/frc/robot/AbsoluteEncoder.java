@@ -11,16 +11,20 @@ public class AbsoluteEncoder {
     private double m_offset;
 
     // constructor
-    public AbsoluteEncoder(int channel, double offset) { // TODO take offset as input here
+    public AbsoluteEncoder(int channel, double offset) { 
         m_analogIn = new AnalogInput(channel);
         m_analogInputSim = new AnalogInputSim(m_analogIn);
 
-        m_offset = offset; // look at todo above
+        m_offset = offset;
     }
 
-    // methods
+    /**
+     * Returns the angle radian.
+     * @todo check if this is equal to the 0
+     * @return the angle radian
+     */
     public double getAngleRadians() {
-        return ((m_analogInputSim.getVoltage() % 5 / 5) * 2 * Math.PI) - m_offset;
+        return ((m_analogInputSim.getVoltage() % 5 / 5) * 2 * Math.PI) + m_offset;
     }
 
     public double getAngleDegrees() {
