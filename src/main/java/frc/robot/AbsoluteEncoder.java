@@ -2,6 +2,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.simulation.AnalogInputSim;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class AbsoluteEncoder {
     // fields
@@ -25,6 +26,10 @@ public class AbsoluteEncoder {
      */
     public double getAngleRadians() {
         return ((m_analogInputSim.getVoltage() % 5 / 5) * 2 * Math.PI) + m_offset;
+    }
+
+    public double getVoltage() {
+        return m_analogInputSim.getVoltage();
     }
 
     public double getAngleDegrees() {

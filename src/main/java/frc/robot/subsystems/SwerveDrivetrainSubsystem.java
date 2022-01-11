@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.wpilibj.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.AbsoluteEncoder;
 import frc.robot.HardwareMap.SwerveDrivetrainHardware;
 import frc.robot.HardwareMap.SwerveModuleHardware;
 
@@ -20,6 +21,7 @@ public class SwerveDrivetrainSubsystem extends SubsystemBase {
 
   private ChassisSpeeds m_chassisSpeeds;
   private SwerveDriveKinematics m_kinematics;
+  private AbsoluteEncoder absoluteEncoder;
 
   /** Creates a new SwerveDrivetrainSubsystem. */
   public SwerveDrivetrainSubsystem(SwerveDrivetrainHardware hardware) {
@@ -47,6 +49,7 @@ public class SwerveDrivetrainSubsystem extends SubsystemBase {
     SmartDashboard.putNumber("Front Right Wheel", m_frontRightWheel.getRadians());
     SmartDashboard.putNumber("Rear Left Wheel", m_rearLeftWheel.getRadians());
     SmartDashboard.putNumber("Rear Right Wheel", m_rearRightWheel.getRadians());
+    SmartDashboard.putNumber("Voltage", m_rearLeftWheel.getVoltage());
     
   }
 
